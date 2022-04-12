@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Header from '../components/Header';
 
 class Ranking extends React.Component {
   constructor() {
@@ -23,6 +24,7 @@ class Ranking extends React.Component {
     console.log(ranking);
     return (
       <>
+        <Header />
         <h1 data-testid="ranking-title">Ranking</h1>
         <section>
           {ranking

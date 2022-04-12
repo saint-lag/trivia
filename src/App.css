@@ -41,18 +41,6 @@ footer {
   }
 }
 
-.App-header {
-  align-items: center;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  font-size: calc(10px + 2vmin);
-  justify-content: center;
-  margin-bottom: 100px;
-  min-height: 50vh;
-  z-index: 1;
-}
-
 .App-link {
   color: #61dafb;
 }

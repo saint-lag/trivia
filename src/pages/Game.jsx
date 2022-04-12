@@ -6,9 +6,10 @@ import { decode } from 'he';
 import fetchGame from '../services/fetchGame';
 import searchTokenAPI from '../services/searchTokenApi';
 import { addToken, updateScore, updateCorrectAnswers } from '../actions';
+import Player from '../components/Player';
 import Header from '../components/Header';
 import Timer from '../components/Timer';
-import '../css/game.css';
+import '../styles/Game.css';
 
 class Game extends Component {
   constructor() {
@@ -154,6 +155,7 @@ class Game extends Component {
       <>
         {redirectToFeedback && <Redirect to="/feedback" />}
         <Header />
+        <Player />
         <main>
           {gameQuestions.length > 0 && (
             <div>
@@ -182,7 +184,7 @@ class Game extends Component {
                       gameQuestions[questionNumber].correct_answer,
                     ) }
                   >
-                    {answer}
+                    {decode(answer)}
                   </button>
                 ))}
                 {!nextButton && (

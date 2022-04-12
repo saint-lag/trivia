@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
+import Player from '../components/Player';
 import Header from '../components/Header';
 // import { updateCorrectAnswers } from '../actions';
 
@@ -41,6 +42,7 @@ class Feedback extends Component {
     return (
       <>
         <Header />
+        <Player />
         <main>
           <h1 className="my-3" data-testid="feedback-text">
             {message}

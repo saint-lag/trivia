@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { addToken, addLogin, addGravatarPicture } from '../actions/index';
 import searchTokenAPI from '../services/searchTokenApi';
 import fetchGravatarPicture from '../services/fetchGravatarPicture';
+import Header from '../components/Header';
 // import store from '../store/index';
 
 class Login extends React.Component {
@@ -62,6 +63,7 @@ class Login extends React.Component {
     // console.log(this.props);
     return (
       <>
+        <Header />
         <main>
           <form className="d-grid gap-3">
             <input
