@@ -1,15 +1,17 @@
 .App {
-
-  /* background-color: #3c578d; */
+  align-items: space-between;
   background-color: #dfdbe5;
   background-image: linear-gradient(to top, #87c0f5 0%, #051367 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   min-height: 100vh;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App-main {
+  align-items: center;
+  display: flex;
 }
 
 .red-border {
@@ -20,18 +22,44 @@
   border: 1px solid green;
 }
 
+main {
+
+  /* border: 1px solid purple; */
+  margin-bottom: 150px;
+}
+
 form {
+
+  /* border: 1px solid purple; */
   margin: 0 auto;
+  margin-top: 100px;
   width: 225px;
 }
 
 footer {
-  bottom: 0;
+
+  /* border: 1px solid yellow; */
   display: flex;
   justify-content: center;
-  margin-bottom: 50px;
-  position: fixed;
+  margin-bottom: 100px;
   width: 100%;
+}
+
+.ranking-back-to-home {
+  background-color: #0077b6;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  width: 150px;
+}
+
+.ranking-section {
+
+  /* border: 1px solid red; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  width: 800px;
 }
 
 @media ( prefers-reduced-motion : no-preference ) {

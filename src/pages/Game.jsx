@@ -5,7 +5,7 @@ import { PropTypes } from 'prop-types';
 import { decode } from 'he';
 import fetchGame from '../services/fetchGame';
 import searchTokenAPI from '../services/searchTokenApi';
-import { addToken, updateScore, updateCorrectAnswers } from '../actions';
+import { addToken, updateScore, updateCorrectAnswers } from '../redux/actions';
 import Player from '../components/Player';
 import Header from '../components/Header';
 import Timer from '../components/Timer';

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addToken, addLogin, addGravatarPicture } from '../actions/index';
+import { addToken, addLogin, addGravatarPicture } from '../redux/actions';
 import searchTokenAPI from '../services/searchTokenApi';
 import fetchGravatarPicture from '../services/fetchGravatarPicture';
 import Header from '../components/Header';
@@ -58,13 +58,18 @@ class Login extends React.Component {
     history.push('/settings');
   };
 
+  handleClickRanking = () => {
+    const { history } = this.props;
+    history.push('/ranking');
+  };
+
   render() {
     const { name, gravatarEmail, buttonDisable } = this.state;
     // console.log(this.props);
     return (
       <>
         <Header />
-        <main>
+        <main className="App-main">
           <form className="d-grid gap-3">
             <input
               className=" form-control"
@@ -105,6 +110,15 @@ class Login extends React.Component {
             onClick={ this.handleClickButtonSettings }
           >
             Configurações
+          </button>
+          <button
+            style={ { backgroundColor: '#0077b6' } }
+            className="btn btn-primary btn-lg  mx-1"
+            type="button"
+            data-testid="btn-settings"
+            onClick={ this.handleClickRanking }
+          >
+            Ranking
           </button>
         </footer>
       </>

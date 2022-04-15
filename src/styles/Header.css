@@ -1,11 +1,22 @@
 .App-header {
   align-items: center;
+
+  /* border: 1px solid red; */
   color: white;
   display: flex;
   flex-direction: column;
   font-size: calc(10px + 2vmin);
-  justify-content: center;
-  margin-bottom: 100px;
-  min-height: 50vh;
+  justify-content: space-around;
+  min-height: 40vh;
+  width: auto;
   z-index: 1;
+}
+
+.App-logo {
+
+  /* border: 1px solid green; */
+  min-height: 15vh;
+  min-width: 50vh;
+  pointer-events: none;
+  width: 40%;
 }

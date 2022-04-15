@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Header from '../components/Header';
+import '../App.css';
 
 class Ranking extends React.Component {
   constructor() {
@@ -26,11 +27,11 @@ class Ranking extends React.Component {
       <>
         <Header />
         <h1 data-testid="ranking-title">Ranking</h1>
-        <section>
+        <section className="ranking-section">
           {ranking
             .sort((a, b) => b.score - a.score)
             .map((game, index) => (
-              <div key={ `ranking${index}` }>
+              <div className="mx-2" key={ `ranking${index}` }>
                 <img src={ game.picture } alt={ `Foto do ${game.name}` } />
                 <span data-testid={ `player-name-${index}` }>{game.name}</span>
                 <span data-testid={ `player-score-${index}` }>{game.score}</span>
@@ -38,8 +39,7 @@ class Ranking extends React.Component {
             ))}
         </section>
         <button
-          style={ { backgroundColor: '#0077b6' } }
-          className="btn btn-primary"
+          className="btn btn-primary ranking-back-to-home"
           type="button"
           data-testid="btn-go-home"
           onClick={ () => history.push('/') }
