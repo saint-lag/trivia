@@ -13,5 +13,4 @@
 ## Technical aspects:
 ### - Used API:
       
-      - [USED API]
-      
+   <a href="https://opentdb.com" ><img src="https://opentdb.com/images/logo.png" /></a>
