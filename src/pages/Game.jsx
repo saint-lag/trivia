@@ -35,16 +35,13 @@ class Game extends Component {
 
   async getGame(token) {
     const { results, response_code: responseCode } = await fetchGame(token);
-    console.log(results);
     const validTokenCode = 0;
     if (responseCode === validTokenCode) {
       const arrayOfAnswers = [];
-      console.log(this.randomNumber);
       results.forEach((element, index) => {
         const answers = [element.correct_answer, ...element.incorrect_answers];
         arrayOfAnswers[index] = answers.sort(this.randomNumber);
       });
-      console.log(arrayOfAnswers);
       this.setState({ gameQuestions: results, arrayOfAnswers });
     } else { this.getToken(); }
   }

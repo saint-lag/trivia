@@ -1,7 +1,16 @@
-const fetchGame = async (token) => {
-  const quantity = 5;
-  // const token = 'db2d9f52f48eca2797a009b11c9c18747b674db10f470a05664dcd52af4c5b0f';
-  const url = `https://opentdb.com/api.php?amount=${quantity}&token=${token}`;
+const fetchGame = async (token,
+  trivia_settings = { amount: 5, category: '', difficulty: '', type: '' }) => {
+  let url = `https://opentdb.com/api.php?amount=${trivia_settings.amount}&token=${token}`;
+  url = trivia_settings.category
+    ? `${url}&category=${trivia_settings.category}`
+    : url;
+  url = trivia_settings.difficulty
+    ? `${url}&difficulty=${trivia_settings.difficulty}`
+    : url;
+  url = trivia_settings.type
+    ? `${url}&type=${trivia_settings.type}`
+    : url;
+
   try {
     const resolve = await fetch(url);
     const data = await resolve.json();

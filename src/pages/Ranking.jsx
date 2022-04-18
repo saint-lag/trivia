@@ -11,18 +11,9 @@ class Ranking extends React.Component {
     };
   }
 
-  // comp
-
-  // loadGamesInfo = () => {
-  //   this.setState({
-  //     ranking: JSON.parse(localStorage.getItem('ranking')),
-  //   });
-  // }
-
   render() {
     const { history } = this.props;
     const { ranking } = this.state;
-    console.log(ranking);
     return (
       <>
         <Header />
@@ -31,21 +22,23 @@ class Ranking extends React.Component {
           {ranking
             .sort((a, b) => b.score - a.score)
             .map((game, index) => (
-              <div className="mx-2" key={ `ranking${index}` }>
+              <div className="mx-2 my-2" key={ `ranking${index}` }>
                 <img src={ game.picture } alt={ `Foto do ${game.name}` } />
                 <span data-testid={ `player-name-${index}` }>{game.name}</span>
                 <span data-testid={ `player-score-${index}` }>{game.score}</span>
               </div>
             ))}
         </section>
-        <button
-          className="btn btn-primary ranking-back-to-home"
-          type="button"
-          data-testid="btn-go-home"
-          onClick={ () => history.push('/') }
-        >
-          Voltar à Login
-        </button>
+        <footer>
+          <button
+            className="btn btn-primary btn-lg ranking-back-to-home"
+            type="button"
+            data-testid="btn-go-home"
+            onClick={ () => history.push('/') }
+          >
+            Voltar à Login
+          </button>
+        </footer>
       </>
     );
   }

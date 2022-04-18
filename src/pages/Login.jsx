@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -90,8 +91,10 @@ class Login extends React.Component {
             />
 
             <button
-              style={ { backgroundColor: '#5a189a' } }
-              className="btn btn-primary btn-lg  mx-1"
+              style={ {
+    backgroundColor: '#5a189a',
+    color: 'white' } }
+              className="btn btn-default btn-lg  mx-1"
               data-testid="btn-play"
               type="button"
               onClick={ this.handleClick }
